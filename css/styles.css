@@ -16,8 +16,14 @@ Tertiary Color: #0bb6ff;
   --tertiary-color: #0bb6ff;
   --white: #fff;
   --lightgrey: #e9e9e9;
+  --sun-color-one: #edc655;
+  --sun-color-two: #fcffad;
+  --sun-color-three: #f76414;
 
   --icon-size: 30px;
+
+  --small-screen: 500px;
+  --medium-screen: 750px;
 }
 
 * {
@@ -233,7 +239,7 @@ table {
   width: var(--icon-size);
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: var(--small-screen)) {
 
   .grid {
     grid-template-columns: 1fr;
@@ -241,7 +247,7 @@ table {
 
 }
 
-@media all and (min-width: 500px) and (max-width: 750px) {
+@media all and (min-width: var(--small-screen)) and (max-width: var(--medium-screen)) {
 
   .grid {
     grid-template-columns: repeat(2, 1fr);
@@ -249,7 +255,7 @@ table {
 
 }
 
-@media all and (max-width: 750px) {
+@media all and (max-width: var(--medium-screen)) {
   h1 {
     font-size: 22px;
   }
@@ -275,13 +281,13 @@ table {
 
 @keyframes color-change {
   0% {
-    fill: #edc655;
+    fill: var(--sun-color-one);
   }
   50% {
-    fill: #fcffad;
+    fill: var(--sun-color-two);
   }
   100% {
-    fill: #f76414;
+    fill: var(--sun-color-three);
   }
 }
 
