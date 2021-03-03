@@ -9,6 +9,7 @@ Tertiary Color: #0bb6ff;
 */
 
 :root {
+  /* Colors */
   --text-color: #000;
   --primary-color: #213fff;
   --primary-color-darker: #001595;
@@ -20,8 +21,10 @@ Tertiary Color: #0bb6ff;
   --sun-color-two: #fcffad;
   --sun-color-three: #f76414;
 
+  /* Icon and image sizes */
   --icon-size: 30px;
 
+  /* Screen sizes */
   --small-screen: 500px;
   --medium-screen: 750px;
 }
@@ -59,40 +62,47 @@ a {
 }
 
 a:visited {
-  /*Visited link*/
+  /* Visited link */
   color: var(--secondary-color);
 }
 
-a:hover, a:focus {
-  /*Remove underlining when hovering over link*/
+a:hover,
+a:focus {
+  /* Remove underlining when hovering over link */
   text-decoration: none;
 }
 
 a:active {
-  /*Selected link*/
+  /* Selected link */
   color: var(--primary-color-darker);
 }
 
 .button {
-  /*Overwrite browser defaults & reset border*/
+  /* Overwrite browser defaults & reset border */
   border: none;
-  /*Take font from outer container*/
+
+  /* Take font from outer container */
   font-family: inherit;
-  /*Button styling*/
+
+  /* Button styling */
   background-color: var(--primary-color);
-  /*Added important to overwrite <a> settings in any case for a link/button element*/
-  color: var(--white)!important;
+
+  /* Added important to overwrite <a> settings in any case for a link/button element */
+  color: var(--white) !important;
   text-decoration: none;
-  /*Spacing*/
+
+  /* Spacing */
   padding: 10px;
   border-radius: 3px;
-  /*New border*/
-  border-bottom: 2px solid rgba(0,0,0,0.3);
+
+  /* New border */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   transition: opacity 0.2s;
 }
 
-.button:hover, .button:focus {
-  /*Mouse as Hand*/
+.button:hover,
+.button:focus {
+  /* Mouse as Hand */
   cursor: pointer;
   opacity: 0.8;
 }
@@ -132,14 +142,15 @@ a:active {
   margin-left: 25px;
 }
 
-.navigation-list__item, .navigation-list__item--active {
+.navigation-list__item,
+.navigation-list__item--active {
   text-decoration: none;
   font-size: 20px;
   letter-spacing: 1px;
   font-weight: 500;
 }
 
-.navigation-list__item:after {
+.navigation-list__item::after {
   display: block;
   content: '';
   border-bottom: 3px solid var(--primary-color);
@@ -147,11 +158,12 @@ a:active {
   transition: transform 0.25s ease-in-out;
 }
 
-.navigation-list__item:hover:after {
+.navigation-list__item:hover::after {
   transform: scaleX(1);
 }
 
-.navigation-list__item:visited, .navigation-list__item--active:visited {
+.navigation-list__item:visited,
+.navigation-list__item--active:visited {
   color: var(--primary-color);
 }
 
@@ -172,12 +184,14 @@ a:active {
   border-radius: 50%;
 }
 
-/*start grid fallback*/
+/* start grid fallback */
+
 .grid__item {
   display: inline-block;
   width: 33%;
 }
-/*end grid fallback*/
+
+/* end grid fallback */
 
 @supports (display: grid) {
   .grid {
@@ -240,19 +254,15 @@ table {
 }
 
 @media all and (max-width: var(--small-screen)) {
-
   .grid {
     grid-template-columns: 1fr;
   }
-
 }
 
 @media all and (min-width: var(--small-screen)) and (max-width: var(--medium-screen)) {
-
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
 }
 
 @media all and (max-width: var(--medium-screen)) {
@@ -283,9 +293,11 @@ table {
   0% {
     fill: var(--sun-color-one);
   }
+
   50% {
     fill: var(--sun-color-two);
   }
+
   100% {
     fill: var(--sun-color-three);
   }
@@ -295,6 +307,7 @@ table {
   from {
     transform: translate(0, 50px);
   }
+
   to {
     transform: translate(200px, 50px);
   }
@@ -304,6 +317,7 @@ table {
   from {
     transform: translate(446px, 48px);
   }
+
   to {
     transform: translate(100px, 48px);
   }
