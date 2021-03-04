@@ -53,7 +53,7 @@ main {
   justify-content: center;
   margin: auto;
   min-height: 80vh;
-  height: calc(100% - 70px - 95px);
+  height: calc(80vh - 70px - 95px);
 }
 
 h1 {
