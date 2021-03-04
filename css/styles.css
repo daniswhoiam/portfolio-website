@@ -40,7 +40,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   color: var(--text-color);
-  height: 100vh;
+  height: 100%;
 }
 
 main {
@@ -49,7 +49,8 @@ main {
   align-items: center;
   justify-content: center;
   margin: auto;
-  min-height: 80%;
+  min-height: 80vh;
+  height: calc(100% - 70px - 95px);
 }
 
 h1 {
@@ -246,6 +247,11 @@ a:active {
 
 /* start grid fallback */
 
+.work {
+  width: 100%;
+  padding: 0 10px;
+}
+
 .grid__item {
   display: inline-block;
   width: 33%;
@@ -256,6 +262,11 @@ a:active {
 /* end grid fallback */
 
 @supports (display: grid) {
+  .work {
+    width: initial;
+    padding: unset;
+  }
+
   .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -323,19 +334,34 @@ td {
   width: var(--icon-size);
 }
 
-@media all and (max-width: var(--small-screen)) {
+@media all and (max-width: 500px) {
+  .profile > *:not(img) {
+    clear: both;
+    padding: 0 20px;
+  }
+
   .grid {
     grid-template-columns: 1fr;
   }
+
+  #contact-form input,
+  #contact-form textarea {
+    /* Layout */
+    min-width: 300px;
+  }
+
+  .contact-data {
+    min-width: 300px;
+  }
 }
 
-@media all and (min-width: var(--small-screen)) and (max-width: var(--medium-screen)) {
+@media all and (min-width: 500px) and (max-width: 750px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media all and (max-width: var(--medium-screen)) {
+@media all and (max-width: 750px) {
   h1 {
     font-size: 22px;
   }
