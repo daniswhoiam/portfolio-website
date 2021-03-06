@@ -15,14 +15,6 @@ Secondary Color: #6a19ff;
 Tertiary Color: #0bb6ff;
 */
 
-:root {
-  /* Colors */
-
-  /* Icon and image sizes */
-
-  /* Screen sizes */
-}
-
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -34,7 +26,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   color: #000;
-  height: 100%;
+  min-height: 100vh;
 }
 
 main {
@@ -45,15 +37,6 @@ main {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin: auto;
-  min-height: 80vh;
-  height: calc(80vh - 70px - 95px);
 }
 
 h1 {
@@ -206,6 +189,24 @@ a:active {
 .navigation-list li .navigation-list__item--active {
   color: #001595;
   font-weight: 600;
+}
+
+.flex-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px - 95px);
+  padding: 10px 50px;
 }
 
 .profile {
@@ -396,6 +397,7 @@ td {
 .social-media__icon {
   height: 30px;
   width: 30px;
+  margin: 0 5px;
 }
 
 @media all and (max-width: 500px) {
@@ -432,6 +434,10 @@ td {
     font-size: 22px;
   }
 
+  .flex-wrapper {
+    padding: 10px 20px;
+  }
+
   .grid {
     grid-gap: 10px;
   }
@@ -443,6 +449,13 @@ td {
 
   table {
     margin: 0 auto;
+    text-align: left;
+    border-spacing: 2px;
+  }
+
+  th,
+  td {
+    padding: 0;
   }
 
   .berlin-illustration {

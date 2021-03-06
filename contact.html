@@ -32,54 +32,56 @@
       </nav>
     </header>
     <main>
-      <form id="contact-form" action="index.html" method="post">
-        <div class="row">
-          <div class="label-container">
-            <label class="standard-label" for="user_name">Your name</label>
+      <div class="flex-wrapper">
+        <form id="contact-form" action="index.html" method="post">
+          <div class="row">
+            <div class="label-container">
+              <label class="standard-label" for="user_name">Your name</label>
+            </div>
+            <div class="input-container">
+              <input type="text" id="user_name" name="user_name" required>
+            </div>
           </div>
-          <div class="input-container">
-            <input type="text" id="user_name" name="user_name" required>
+          <div class="row">
+            <div class="label-container">
+              <label class="standard-label" for="user_phone">Your phone number</label>
+            </div>
+            <div class="input-container">
+              <!--Phone validation from exercise-->
+              <input type="tel" id="user_phone" name="user_phone" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
+            </div>
           </div>
+          <div class="row">
+            <div class="label-container">
+              <label class="standard-label" for="user_email">Your e-mail address</label>
+            </div>
+            <div class="input-container">
+              <input type="email" id="user_email" name="user_email" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="label-container">
+              <label class="standard-label" for="user_message">Your message</label>
+            </div>
+            <div class="input-container">
+              <textarea id="user_message" name="user_message" maxlength="240" required></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <button class="button" type="submit" name="submit">Send message</button>
+          </div>
+        </form>
+        <div class="contact-data">
+          <span>Daniil Belazovschi</span><br>
+          Grünberger Str. 1<br>
+          10243 Berlin<br>
+          Deutschland<br>
+          <br>
+          <span>Tel</span><a aria-label="This is my phone number" href="tel:+4917684913388">+49 176 84 91 33 88</a><br>
+          <span>Skype</span><a aria-label="This is how you can find me on skype" href="skype:live:daniil.belazovschi">live:daniil.belazovschi</a><br>
+          <span>E-Mail</span><a aria-label="This is my e-mail address" href="mailto:daniil.belazovschi@web.de">daniil.belazovschi@web.de</a><br>
+          <a href="mailto:daniil.belazovschi@web.de">Contact me</a>
         </div>
-        <div class="row">
-          <div class="label-container">
-            <label class="standard-label" for="user_phone">Your phone number</label>
-          </div>
-          <div class="input-container">
-            <!--Phone validation from exercise-->
-            <input type="tel" id="user_phone" name="user_phone" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
-          </div>
-        </div>
-        <div class="row">
-          <div class="label-container">
-            <label class="standard-label" for="user_email">Your e-mail address</label>
-          </div>
-          <div class="input-container">
-            <input type="email" id="user_email" name="user_email" required>
-          </div>
-        </div>
-        <div class="row">
-          <div class="label-container">
-            <label class="standard-label" for="user_message">Your message</label>
-          </div>
-          <div class="input-container">
-            <textarea id="user_message" name="user_message" maxlength="240" required></textarea>
-          </div>
-        </div>
-        <div class="row">
-          <button class="button" type="submit" name="submit">Send message</button>
-        </div>
-      </form>
-      <div class="contact-data">
-        <span>Daniil Belazovschi</span><br>
-        Grünberger Str. 1<br>
-        10243 Berlin<br>
-        Deutschland<br>
-        <br>
-        <span>Tel</span><a aria-label="This is my phone number" href="tel:+4917684913388">+49 176 84 91 33 88</a><br>
-        <span>Skype</span><a aria-label="This is how you can find me on skype" href="skype:live:daniil.belazovschi">live:daniil.belazovschi</a><br>
-        <span>E-Mail</span><a aria-label="This is my e-mail address" href="mailto:daniil.belazovschi@web.de">daniil.belazovschi@web.de</a><br>
-        <a href="mailto:daniil.belazovschi@web.de">Contact me</a>
       </div>
     </main>
     <footer class="page-footer">
