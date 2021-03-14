@@ -305,6 +305,13 @@ a:active {
   margin-right: 5px;
 }
 
+.error-message {
+  border: 2px solid #f00;
+  border-radius: 2px;
+  padding: 4px;
+  margin-bottom: 10px;
+}
+
 .work h1 {
   margin: 0 50px;
 }
