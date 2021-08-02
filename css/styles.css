@@ -295,11 +295,6 @@ a:active {
     min-height: auto;
     margin: 0;
   }
-
-  .grid__item:last-child {
-    grid-column: 3 / 3;
-    grid-row: 1 / 3;
-  }
 }
 
 #cv-link {
