@@ -117,9 +117,46 @@
         </p>
         <div class="cv">
           <div class="cv-pictures">
-            <img src="" alt="" />
+            <!-- Inspired by https://codepen.io/Ali-Majed/pen/dyNjgXL -->
+            <!-- images -->
+            <div class="cv-pictures__images">
+              <img src="img/cities/chisinau.jpg" alt="Chisinau" class="firstImage">
+              <img src="img/cities/cologne.jpg" alt="Cologne"/>
+              <img src="img/cities/aachen.jpg" alt="Aachen" />
+              <img src="img/cities/berlin.jpg" alt="Berlin" />
+            </div>
+            <!-- Buttons -->
+            <div class="cv-pictures__buttons">
+              <div class="previous-btn">
+                <i class="fas fa-angle-left"></i>
+              </div>
+              <div class="next-btn">
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <!-- Pagination -->
+            <div class="cv-pictures__pagination"></div>
           </div>
-          <div class="cv-stations"></div>
+          <div class="cv-stations">
+            <div class="cv-stations__station">
+              <span>1998</span><br>Born in Chisinau, Moldova
+            </div>
+            <div class="cv-stations__station">
+              <span>2005</span><br>Moved to Germany
+            </div>
+            <div class="cv-stations__station">
+              <span>2016</span><br>Abitur, Best in class
+            </div>
+            <div class="cv-stations__station">
+              <span>2019</span><br>B.Sc. RWTH Aachen University, Business Administration and Engineering, Second best of graduation class
+            </div>
+            <div class="cv-stations__station">
+              <span>2020</span><br>Founded first company
+            </div>
+            <div class="cv-stations__station">
+              <span>2021</span><br>Started web development journey
+            </div>
+            <button class="button">Click here for my professional CV</button>
         </div>
       </div>
     </main>
@@ -151,5 +188,99 @@
     </footer>
     <script src="js/tota11y.min.js"></script>
     <script src="js/functions.js"></script>
+    <script>
+      let cvImageWrapperImages = document.querySelectorAll(
+        ".cv-pictures__images img"
+      );
+      let cvImageWrapperImagesFirstImage = document.querySelector(
+        ".cv-pictures__images .firstImage"
+      );
+
+      let previousBtn = document.querySelector(".previous-btn");
+      let nextBtn = document.querySelector(".next-btn");
+
+      let cvImagesWrapperPagination = document.querySelector(
+        ".cv-pictures__pagination"
+      );
+
+      let currentImageCount = 1;
+
+      let sliderController;
+      let createPaginationSpans;
+
+      previousBtn.addEventListener("click", previousImage);
+      nextBtn.addEventListener("click", nextImage);
+
+      function previousImage() {
+        if (currentImageCount === 1) {
+          return false;
+        } else {
+          currentImageCount--;
+          sliderController();
+        }
+      }
+
+      function nextImage() {
+        if (currentImageCount === cvImageWrapperImages.length) {
+          return false;
+        } else {
+          currentImageCount++;
+          sliderController();
+        }
+      }
+
+      (function createPaginationSpans() {
+        for (let i = 0; i < cvImageWrapperImages.length; i++) {
+          let paginationSpan = document.createElement("span");
+          cvImagesWrapperPagination.appendChild(paginationSpan);
+        }
+      })();
+
+      (sliderController = function () {
+        let paginationCircls = document.querySelectorAll(
+          ".cv-pictures__pagination span"
+        );
+
+        removeAllActive(paginationCircls);
+
+        activeButton();
+
+        let currentImagesMinusOne = currentImageCount - 1;
+
+        paginationCircls[currentImagesMinusOne].classList.add("active");
+
+        let imageWidth = document.querySelector('.cv-pictures__images').getBoundingClientRect().width;
+
+        let marginValue = -1 * (imageWidth * currentImagesMinusOne);
+
+        cvImageWrapperImagesFirstImage.style.marginLeft = `${marginValue}px`;
+      })();
+
+      function removeAllActive(targetElement) {
+        for (let i = 0; i < targetElement.length; i++) {
+          targetElement[i].classList.remove("active");
+        }
+      }
+
+      function activeButton() {
+        currentImageCount === 1
+          ? previousBtn.classList.add("disabled")
+          : previousBtn.classList.remove("disabled");
+
+        currentImageCount === cvImageWrapperImages.length
+          ? nextBtn.classList.add("disabled")
+          : nextBtn.classList.remove("disabled");
+      }
+
+      setInterval(() => {
+        if (currentImageCount != cvImageWrapperImages.length) {
+          currentImageCount++;
+          sliderController();
+        } else {
+          currentImageCount = 1;
+          sliderController();
+        }
+      }, 3000);
+    </script>
   </body>
 </html>

@@ -35,7 +35,7 @@ Tertiary Color: #0bb6ff;
 }
 
 body {
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: "Red Hat Display", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.6;
@@ -46,6 +46,7 @@ body {
 main {
   display: flex;
   flex-direction: column;
+  padding: 0 10%;
 }
 
 h1 {
@@ -54,7 +55,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'Roboto Slab';
+  font-family: "Roboto Slab";
   font-size: 26px;
   font-weight: 500;
 }
@@ -155,7 +156,7 @@ a:active {
 
 .navigation-list__item::after {
   display: block;
-  content: '';
+  content: "";
   border-bottom: 3px solid var(--primary-color);
   transform: scaleX(0);
   transition: transform 0.25s ease-in-out;
@@ -198,7 +199,136 @@ a:active {
   max-width: 300px;
   margin-right: 10vw;
   border-radius: 10px;
-  box-shadow: -35px 25px 4px 0px rgba(0,0,0,0.75);
+  box-shadow: -35px 25px 4px 0px rgba(0, 0, 0, 0.75);
+}
+
+.cv {
+  display: flex;
+  flex-direction: row;
+}
+
+.cv-pictures {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cv-pictures__images {
+  width: 100%;
+  min-width: 400px;
+  max-width: 600px;
+  height: 300px;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: -35px 25px 4px 0px rgba(0, 0, 0, 0.75);
+}
+
+.cv-pictures__images img {
+  width: 100%;
+  max-width: 600px;
+  transition: 0.3s cubic-bezier(0.79, 0.03, 0, 0.99);
+  object-fit: cover;
+}
+
+.cv-pictures__buttons {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.cv-pictures__buttons > div {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.219);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.cv-pictures__buttons > div:first-child {
+  border-radius: 0 5px 5px 0;
+  margin-left: -100px;
+}
+
+.cv-pictures__buttons > div:last-child {
+  border-radius: 5px 0 0 5px;
+  margin-right: -100px;
+}
+
+.cv-pictures:hover .cv-pictures__buttons > div:first-child {
+  margin-left: 0;
+}
+
+.cv-pictures:hover .cv-pictures__buttons > div:last-child {
+  margin-right: 0;
+}
+
+.cv-pictures__buttons div:hover:not(div.disabled) {
+  background-color: rgba(135, 207, 235, 0.493);
+}
+
+.cv-pictures__buttons div:not(div.disabled):active {
+  opacity: 0.7;
+}
+
+.cv-pictures__buttons > div.disabled {
+  cursor: no-drop;
+  opacity: 0.3;
+}
+
+.cv-pictures__buttons div i {
+  font-size: 70px;
+}
+
+.cv-pictures__pagination {
+  position: absolute;
+  top: 68%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.cv-pictures__pagination span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin-right: 5px;
+  transform: scale(0.5);
+  transition: 0.3s ease-in-out;
+  opacity: 0.4;
+}
+
+.cv-pictures__pagination span.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.cv-stations {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10vw;
+  margin-top: 100px;
+}
+
+.cv-stations__station {
+  font: 'Roboto Slab';
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.cv-stations__station span {
+  font-weight: 700;
+  color: var(--primary-color-darker);
 }
 
 #contact-form {
