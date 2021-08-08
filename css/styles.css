@@ -320,7 +320,7 @@ a:active {
 }
 
 .cv-stations__station {
-  font: 'Roboto Slab';
+  font: "Roboto Slab";
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 30px;
@@ -329,6 +329,80 @@ a:active {
 .cv-stations__station span {
   font-weight: 700;
   color: var(--primary-color-darker);
+}
+
+.my-work {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 50px;
+  column-gap: 50px;
+}
+
+.my-work__card {
+  display: grid;
+  grid-template-columns: 30% 30% 40%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header"
+    "leftsection leftsection rightsection"
+    "links links links";
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  max-width: 860px;
+}
+
+.my-work__card h3 {
+  grid-area: header;
+}
+
+.my-work__card .image-container {
+  grid-area: leftsection;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "main-image"
+    "tech-logos";
+}
+
+.main-work-image {
+  grid-area: main-image;
+  width: 100%;
+  max-width: 300px;
+  max-height: 300px;
+  margin: 0 auto 20px auto;
+  object-fit: contain;
+}
+
+.tech-logos {
+  grid-area: tech-logos;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tech-logo {
+  height: 100%;
+  max-height: 32px;
+}
+
+.my-work__card .info-container {
+  grid-area: rightsection;
+}
+
+.my-work__card .info-links {
+  grid-area: links;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.my-work__card .info-links i {
+  font-size: 16px;
+  margin-right: 5px;
 }
 
 #contact-form {
