@@ -1,102 +1,97 @@
-let formValidator;
-if (window.location.pathname.includes('contact')) {
-  (function () {
-    let form = document.querySelector('#contact-form');
-    let nameInput = form.querySelector('#user_name');
-    let phoneInput = form.querySelector('#user_phone');
-    let emailInput = form.querySelector('#user_email');
-    let messageInput = form.querySelector('#user_message');
+let cvImageWrapperImages = document.querySelectorAll(
+  ".cv-pictures__images img"
+);
+let cvImageWrapperImagesFirstImage = document.querySelector(
+  ".cv-pictures__images .firstImage"
+);
 
-    // All fields with their attributes required for validation
-    let formFields = [
-      {
-        name: 'name',
-        input: nameInput,
-        required: true
-      },
-      {
-        name: 'phone number',
-        input: phoneInput,
-        required: false,
-        validation: function (value) {
-          return value.match(/[+\-\(\)\d\s]+/gi);
-        }
-      },
-      {
-        name: 'e-mail address',
-        input: emailInput,
-        required: true,
-        validation: function (value) {
-          return value.includes('@') || !value.includes('.');
-        }
-      },
-      {
-        name: 'personal message',
-        input: messageInput,
-        required: true
-      }
-    ];
+let previousBtn = document.querySelector(".previous-btn");
+let nextBtn = document.querySelector(".next-btn");
 
-    // Generic validation function
-    function validateFormField(field) {
-      let value = field.input.value;
+let cvImagesWrapperPagination = document.querySelector(
+  ".cv-pictures__pagination"
+);
 
-      if (field.required) {
-        if (!value) {
-          showErrorMessage(field.input, `Your ${field.name} is missing. Please fill it in.`);
-          return false;
-        }
-      }
+let currentImageCount = 1;
 
-      if (field.validation) {
-        if (value && !field.validation(value)) {
-          showErrorMessage(field.input, `Your ${field.name} has an invalid format. Please correct it.`);
-          return false;
-        }
-      }
+let sliderController;
+let createPaginationSpans;
 
-      showErrorMessage(field.input);
-      return true;
-    }
+previousBtn.addEventListener("click", previousImage);
+nextBtn.addEventListener("click", nextImage);
 
-    // Responsible for Error Message Handling
-    function showErrorMessage (input, message) {
-      let container = input.parentElement;
-
-      let error = container.querySelector('.error-message');
-      if (error) {
-        container.removeChild(error);
-      }
-
-      if (message) {
-        error = document.createElement('div');
-        error.classList.add('error-message');
-        error.innerText = message;
-        container.appendChild(error);
-      }
-    }
-
-    // Validate whole form
-    function validateForm() {
-      return formFields.every(function (formField) {
-        return validateFormField(formField);
-      });
-    }
-
-    formFields.forEach(function (formField) {
-      formField.input.addEventListener('focusout', function () {
-        validateFormField(formField);
-      });
-    });
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (validateForm()) {
-        form.submit();
-      }
-    });
-  })();
+function previousImage() {
+  if (currentImageCount === 1) {
+    return false;
+  } else {
+    currentImageCount--;
+    sliderController();
+  }
 }
+
+function nextImage() {
+  if (currentImageCount === cvImageWrapperImages.length) {
+    return false;
+  } else {
+    currentImageCount++;
+    sliderController();
+  }
+}
+
+(function createPaginationSpans() {
+  for (let i = 0; i < cvImageWrapperImages.length; i++) {
+    let paginationSpan = document.createElement("span");
+    cvImagesWrapperPagination.appendChild(paginationSpan);
+  }
+})();
+
+(sliderController = function () {
+  let paginationCircls = document.querySelectorAll(
+    ".cv-pictures__pagination span"
+  );
+
+  removeAllActive(paginationCircls);
+
+  activeButton();
+
+  let currentImagesMinusOne = currentImageCount - 1;
+
+  paginationCircls[currentImagesMinusOne].classList.add("active");
+
+  let imageWidth = document
+    .querySelector(".cv-pictures__images")
+    .getBoundingClientRect().width;
+
+  let marginValue = -1 * (imageWidth * currentImagesMinusOne);
+
+  cvImageWrapperImagesFirstImage.style.marginLeft = `${marginValue}px`;
+})();
+
+function removeAllActive(targetElement) {
+  for (let i = 0; i < targetElement.length; i++) {
+    targetElement[i].classList.remove("active");
+  }
+}
+
+function activeButton() {
+  currentImageCount === 1
+    ? previousBtn.classList.add("disabled")
+    : previousBtn.classList.remove("disabled");
+
+  currentImageCount === cvImageWrapperImages.length
+    ? nextBtn.classList.add("disabled")
+    : nextBtn.classList.remove("disabled");
+}
+
+setInterval(() => {
+  if (currentImageCount != cvImageWrapperImages.length) {
+    currentImageCount++;
+    sliderController();
+  } else {
+    currentImageCount = 1;
+    sliderController();
+  }
+}, 3000);
 
 window.addEventListener('resize', function () {
   const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)

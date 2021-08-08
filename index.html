@@ -1,60 +1,486 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Portfolio - Daniil Belazovschi</title>
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Roboto+Slab&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.production.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daniil Belazovschi - Portfolio</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Roboto+Slab&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.production.css" type="text/css" />
+    <link rel="stylesheet" href="css/fontawesome/css/all.css" />
   </head>
   <body>
     <header class="page-header">
       <div class="page-header__item">
-        <img src="img/logo.png" alt="Logo of the website" class="page-header__logo">
+        <img
+          src="img/logo.png"
+          alt="Logo of the website"
+          class="page-header__logo"
+        />
       </div>
       <nav class="page-header__item">
         <ul role="menubar" class="navigation-list">
           <li role="presentation">
-            <a href="index.html" aria-label="This is the home page of this website" role="menuitem" class="navigation-list__item--active">Home</a>
+            <a
+              href="/"
+              aria-label="This is the home page of this website"
+              role="menuitem"
+              class="navigation-list__item--active"
+              >Home</a
+            >
           </li>
           <li role="presentation">
-            <a href="about.html" aria-label="This is a page that contains information about me as a person" role="menuitem" class="navigation-list__item">About</a>
+            <a
+              href="#about"
+              aria-label="This is a page that contains information about me as a person"
+              role="menuitem"
+              class="navigation-list__item"
+              >About</a
+            >
           </li>
           <li role="presentation">
-            <a href="work.html" aria-label="This is a page where I present my work" role="menuitem" class="navigation-list__item">Work</a>
-          </li>
-          <li role="presentation">
-            <a href="contact.html" aria-label="This is a page that provides the possibility to contact me" role="menuitem" class="navigation-list__item">Contact</a>
+            <a
+              href="#work"
+              aria-label="This is a page where I present my work"
+              role="menuitem"
+              class="navigation-list__item"
+              >Work</a
+            >
           </li>
         </ul>
-        <a href="javascript:void(0);" class="page-header__item icon" onclick="hamburgerMenu()">
+        <a
+          href="javascript:void(0);"
+          class="page-header__item icon"
+          onclick="hamburgerMenu()"
+        >
           <i class="fa fa-bars"></i>
         </a>
       </nav>
     </header>
     <main>
-      <div class="flex-wrapper">
-        <div class="profile" >
-          <img src="img/daniil-belazovschi-profile-picture.png" class="profile__portrait" alt="Here you can see my face">
-          <h1>Hello World!</h1>
-          <p>My name is Daniil Belazovschi. I am a <span>web</span> developer from Berlin.</p>
-          <a href="work.html" aria-label="This is a page where I present my work">Check out some of my code</a>
+      <div class="hero">
+        <div class="profile__portrait-wrapper">
+          <img
+            src="img/daniil-belazovschi-profile-picture.jpg"
+            class="profile__portrait"
+            alt="Here you can see my face"
+          />
         </div>
+        <div class="profile__info-wrapper">
+          <h1>
+            Hi,<br />
+            I am Daniil.
+          </h1>
+          <p><i class="fas fa-code"></i> Web Developer</p>
+          <p><i class="fas fa-chart-line"></i> Entrepreneur</p>
+          <p><i class="fas fa-cog"></i> Engineer</p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Located in Berlin, Germany
+          </p>
+          <p>
+            <i class="fas fa-angle-double-down"></i> Scroll down to find out
+            more
+          </p>
+        </div>
+      </div>
+      <h2 id="about">About me</h2>
+      <div class="about-me">
+        <p>
+          In a complex and fast-paced world there is a need for people who connect different mindsets, people and disciplines. Starting with my studies in Aachen I have entered the world of interdisciplinary thought and methodology, aiming to create synergies and collaboration between professionals of diverse backgrounds. In web development I found a field that has almost limitless possibilities and requires to work with many different kinds of people. With my technological and business skills, my aim is to build great products and develop ventures that solve real problems. 
+        </p>
+        <div class="cv">
+          <div class="cv-pictures">
+            <!-- Inspired by https://codepen.io/Ali-Majed/pen/dyNjgXL -->
+            <!-- images -->
+            <div class="cv-pictures__images">
+              <img
+                src="img/cities/chisinau.jpg"
+                alt="Chisinau"
+                class="firstImage"
+              />
+              <img src="img/cities/cologne.jpg" alt="Cologne" />
+              <img src="img/cities/aachen.jpg" alt="Aachen" />
+              <img src="img/cities/berlin.jpg" alt="Berlin" />
+            </div>
+            <!-- Buttons -->
+            <div class="cv-pictures__buttons">
+              <div class="previous-btn">
+                <i class="fas fa-angle-left"></i>
+              </div>
+              <div class="next-btn">
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <!-- Pagination -->
+            <div class="cv-pictures__pagination"></div>
+          </div>
+          <div class="cv-stations">
+            <div class="cv-stations__station">
+              <span>1998</span><br />Born in Chisinau, Moldova
+            </div>
+            <div class="cv-stations__station">
+              <span>2005</span><br />Moved to Germany
+            </div>
+            <div class="cv-stations__station">
+              <span>2016</span><br />Abitur, Best in class
+            </div>
+            <div class="cv-stations__station">
+              <span>2019</span><br />B.Sc. RWTH Aachen University, Business
+              Administration and Engineering, Second best of graduation class
+            </div>
+            <div class="cv-stations__station">
+              <span>2020</span><br />Founded first company
+            </div>
+            <div class="cv-stations__station">
+              <span>2021</span><br />Started web development journey
+            </div>
+            <a
+              id="cv-link"
+              href="https://www.linkedin.com/in/daniil-belazovschi/"
+              class="button"
+              target="_blank"
+              >View my professional CV</a
+            >
+          </div>
+        </div>
+      </div>
+      <h2 id="work">My Work</h2>
+      <div class="my-work">
+        <article class="my-work__card">
+          <h3>Simple JS App</h3>
+          <div class="image-container">
+            <img
+              src="img/simplejs.png"
+              alt="Simple JS App"
+              class="main-work-image"
+            />
+            <div class="tech-logos">
+              <img
+                src="img/technology/jquery.svg"
+                alt="jQuery"
+                class="tech-logo"
+              />
+              <img
+                src="img/technology/bootstrap.svg"
+                alt="Bootstrap"
+                class="tech-logo"
+              />
+            </div>
+          </div>
+          <div class="info-container">
+            This was a first little project to get comfortable using libraries
+            like jQuery and Bootstrap as well as to interact with external APIs.
+            Here, data gets pulled from a public Pokemon API and the Pokemon are
+            displayed in a list. One can browse the Pokemon and find out more
+            about them in a detail view.
+          </div>
+          <div class="info-links">
+            <a
+              href="https://daniswhoiam.github.io/simple-js-app/"
+              target="_blank"
+              class="grid__item-link"
+              ><i class="fas fa-globe"></i>Click here to view my Simple JS
+              App</a
+            >
+            <a
+              href="https://github.com/daniswhoiam/simple-js-app"
+              target="_blank"
+              class="grid__item-link"
+              ><i class="fab fa-github"></i>Click here to view the GitHub
+              repo</a
+            >
+          </div>
+        </article>
+        <article class="my-work__card">
+          <h3>Movie API</h3>
+          <div class="image-container">
+            <img
+              src="img/movieapi.png"
+              alt="Movie API Screenshot"
+              class="main-work-image"
+            />
+            <div class="tech-logos">
+              <img
+                src="img/technology/mongodb.svg"
+                alt="MongoDB"
+                class="tech-logo"
+              />
+              <img
+                src="img/technology/express-109.svg"
+                alt="Express.js"
+                class="tech-logo"
+              />
+              <img
+                src="img/technology/nodejs-icon.svg"
+                alt="Node.js"
+                class="tech-logo"
+              />
+            </div>
+          </div>
+          <div class="info-container">
+            Here, I built a RESTful API that also serves as the backend for an
+            application. The API was built in the fashion of a MERN stack. Data
+            about movies and users is stored in a MongoDB database. There is an
+            authentication system that allows users to safely log-in.
+          </div>
+          <div class="info-links">
+            <a
+              href="https://daniswhoiam-myflix.herokuapp.com"
+              target="_blank"
+              class="grid__item-link"
+              ><i class="fas fa-globe"></i>Click here for the API web address</a
+            >
+            <a
+              href="https://github.com/daniswhoiam/movie_api"
+              target="_blank"
+              class="grid__item-link"
+              ><i class="fab fa-github"></i>Click here to view the GitHub
+              repo</a
+            >
+          </div>
+        </article>
+        <article class="my-work__card">
+          <h3>myFlix Client</h3>
+          <div class="image-container">
+            <img
+              src="img/myflix.png"
+              alt="myFlix Client Screenshot"
+              class="main-work-image"
+            />
+            <div class="tech-logos">
+              <img
+                src="img/technology/react-2.svg"
+                alt="React"
+                class="tech-logo"
+              />
+              <img
+                src="img/technology/redux.svg"
+                alt="Redux"
+                class="tech-logo"
+              />
+              <img
+                src="img/technology/bootstrap.svg"
+                alt="Bootstrap"
+                class="tech-logo"
+              />
+            </div>
+          </div>
+          <div class="info-container">
+            This is the frontend that corresponds to the Movie API. Here, the
+            users can view the movies that are stored in the database and save
+            their own favorites. This was my first project using React. The goal
+            was to build a single page application following the Flux design
+            pattern.
+          </div>
+          <div class="info-links">
+            <a
+              href="https://daniswhoiam-myflix.netlify.app/"
+              target="_blank"
+              class="grid__item-link"
+              ><i class="fas fa-globe"></i>Click here to view my myFlix
+              application</a
+            >
+            <a
+              href="https://github.com/daniswhoiam/myFlix-client"
+              target="_blank"
+              class="grid__item-link"
+              ><i class="fab fa-github"></i>Click here to view the GitHub
+              repo</a
+            >
+          </div>
+        </article>
+        <article class="my-work__card">
+          <h3>Meet App</h3>
+          <div class="image-container">
+            <img
+              src="img/meet.png"
+              alt="Meet App Screenshot"
+              class="main-work-image"
+            />
+            <div class="tech-logos">
+              <img
+                src="img/technology/react-2.svg"
+                alt="React"
+                class="tech-logo"
+              />
+              <img
+                src="img/technology/google-g-2015.svg"
+                alt="Google"
+                class="tech-logo"
+              />
+              <img
+                src="img/technology/aws-lambda-1.svg"
+                alt="AWS Lambda"
+                class="tech-logo"
+              />
+            </div>
+          </div>
+          <div class="info-container">
+            This is a full-fledged progressive web application using advanced
+            concepts like serverless functions (for authentication in this
+            case). It is built using React and CRA. The application pulls events
+            from a Google Calendar via API and displays the events as well as
+            some data charts about the events.
+          </div>
+          <div class="info-links">
+            <a
+              href="https://daniswhoiam.github.io/meet/"
+              target="_blank"
+              class="grid__item-link"
+              ><i class="fas fa-globe"></i>Click here to view my Meet App</a
+            >
+            <a
+              href="https://github.com/daniswhoiam/meet"
+              target="_blank"
+              class="grid__item-link"
+              ><i class="fab fa-github"></i>Click here to view the GitHub
+              repo</a
+            >
+          </div>
+        </article>
+        <article class="my-work__card">
+          <h3>Chat App</h3>
+          <div class="image-container">
+            <img
+              src="img/chatapp.png"
+              alt="Chat App Screenshot"
+              class="main-work-image"
+            />
+            <div class="tech-logos">
+              <img
+                src="img/technology/react-native-1.svg"
+                alt="React Native"
+                class="tech-logo"
+              />
+              <img
+                src="img/technology/react-native-firebase-1.svg"
+                alt="React Native Firebase"
+                class="tech-logo"
+              />
+              <img
+                src="img/technology/firebase.svg"
+                alt="Google Firebase"
+                class="tech-logo"
+              />
+            </div>
+          </div>
+          <div class="info-container">
+            This chat application has been built using React Native to optimize
+            between both performance and time for development. For the backend
+            of the application, Google's firebase services have been used. The
+            "Gifted Chat" library provides the core chatting capabilities.
+          </div>
+          <div class="info-links">
+            <a
+              href="https://github.com/daniswhoiam/chat-app"
+              target="_blank"
+              class="grid__item-link"
+              ><i class="fab fa-github"></i>Click here to view the GitHub repo
+              and to learn how to install the app</a
+            >
+          </div>
+        </article>
+        <article class="my-work__card">
+          <h3>myFlix Client (Angular)</h3>
+          <div class="image-container">
+            <img
+              src="img/myflixangular.png"
+              alt="myFlix (Angular) Screenshot"
+              class="main-work-image"
+            />
+            <div class="tech-logos">
+              <img
+                src="img/technology/angular.svg"
+                alt="Angular"
+                class="tech-logo"
+              />
+              <img
+                src="img/technology/material.svg"
+                alt="Material Design"
+                class="tech-logo"
+              />
+            </div>
+          </div>
+          <div class="info-container">
+            This is another frontend for the movie API. This time, I built it
+            using Angular as a frontend framework. Due to the use of Material
+            Design it looks differently than the React version, but the
+            functionality is the same. It was my first Angular project.
+          </div>
+          <div class="info-links">
+            <a
+              href="https://daniswhoiam.github.io/myFlix-Angular-client/welcome"
+              target="_blank"
+              class="grid__item-link"
+              ><i class="fas fa-globe"></i>Click here to view my myFlix
+              application</a
+            >
+            <a
+              href="https://github.com/daniswhoiam/myFlix-Angular-client"
+              target="_blank"
+              class="grid__item-link"
+              ><i class="fab fa-github"></i>Click here to view the GitHub
+              repo</a
+            >
+          </div>
+        </article>
       </div>
     </main>
     <footer class="page-footer">
-      <p>Find me on</p>
+      <p>Contact me at <a aria-label="This is my e-mail address" href="mailto:daniil.belazovschi@web.de">daniil.belazovschi@gmail.com</a> or find me on</p>
       <div class="social-media">
-        <a href="https://github.com/daniswhoiam" aria-label="This is the link to my Github profile"><img class="social-media__icon" src="img/github.svg" alt="Github Icon"></a>
-        <a href="https://twitter.com/_daniswhoiam" aria-label="This is the link to my Twitter profile"><img class="social-media__icon" src="img/twitter.svg" alt="Twitter"></a>
-        <a href="https://www.linkedin.com/in/daniil-belazovschi/" aria-label="This is the link to my LinkedIn profile"><img class="social-media__icon" src="img/linkedin.svg" alt="LinkedIn"></a>
+        <a
+          href="https://github.com/daniswhoiam"
+          aria-label="This is the link to my Github profile"
+          ><img
+            class="social-media__icon"
+            src="img/github.svg"
+            alt="Github Icon"
+        /></a>
+        <a
+          href="https://twitter.com/_daniswhoiam"
+          aria-label="This is the link to my Twitter profile"
+          ><img class="social-media__icon" src="img/twitter.svg" alt="Twitter"
+        /></a>
+        <a
+          href="https://www.linkedin.com/in/daniil-belazovschi/"
+          aria-label="This is the link to my LinkedIn profile"
+          ><img
+            class="social-media__icon"
+            src="img/linkedin.svg"
+            alt="LinkedIn"
+        /></a>
+        <a
+          href="https://stackoverflow.com/users/13342956/daniswhoiam"
+          aria-label="This is the link to my StackOverflow profile"
+          ><img
+            class="social-media__icon"
+            src="img/Stack_Overflow_icon.svg"
+            alt="StackOverflow"
+        /></a>
+        <a
+          href="https://medium.com/@daniil.belazovschi"
+          aria-label="This is the link to my Medium profile"
+          ><img class="social-media__icon" src="img/medium.svg" alt="Medium"
+        /></a>
+        <a
+          href="https://dev.to/daniswhoiam"
+          aria-label="This is the link to my dev.to profile"
+          ><img class="social-media__icon" src="img/dev-badge.svg" alt="Dev.to"
+        /></a>
       </div>
     </footer>
-    <script src="js/tota11y.min.js"></script>
+    <!-- <script src="js/tota11y.min.js"></script> -->
     <script src="js/functions.js"></script>
   </body>
 </html>
