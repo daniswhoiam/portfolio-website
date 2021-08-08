@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Roboto+Slab&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.production.css" type="text/css" />
     <link rel="stylesheet" href="css/fontawesome/css/all.css" />
   </head>
   <body>
@@ -32,7 +32,7 @@
         <ul role="menubar" class="navigation-list">
           <li role="presentation">
             <a
-              href="index.html"
+              href="/"
               aria-label="This is the home page of this website"
               role="menuitem"
               class="navigation-list__item--active"
@@ -41,7 +41,7 @@
           </li>
           <li role="presentation">
             <a
-              href="about.html"
+              href="#about"
               aria-label="This is a page that contains information about me as a person"
               role="menuitem"
               class="navigation-list__item"
@@ -50,20 +50,11 @@
           </li>
           <li role="presentation">
             <a
-              href="work.html"
+              href="#work"
               aria-label="This is a page where I present my work"
               role="menuitem"
               class="navigation-list__item"
               >Work</a
-            >
-          </li>
-          <li role="presentation">
-            <a
-              href="contact.html"
-              aria-label="This is a page that provides the possibility to contact me"
-              role="menuitem"
-              class="navigation-list__item"
-              >Contact</a
             >
           </li>
         </ul>
@@ -102,18 +93,10 @@
           </p>
         </div>
       </div>
-      <h2>About me</h2>
+      <h2 id="about">About me</h2>
       <div class="about-me">
         <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet.
+          In a complex and fast-paced world there is a need for people who connect different mindsets, people and disciplines. Starting with my studies in Aachen I have entered the world of interdisciplinary thought and methodology, aiming to create synergies and collaboration between professionals of diverse backgrounds. In web development I found a field that has almost limitless possibilities and requires to work with many different kinds of people. With my technological and business skills, my aim is to build great products and develop ventures that solve real problems. 
         </p>
         <div class="cv">
           <div class="cv-pictures">
@@ -161,11 +144,17 @@
             <div class="cv-stations__station">
               <span>2021</span><br />Started web development journey
             </div>
-            <button class="button">Click here for my professional CV</button>
+            <a
+              id="cv-link"
+              href="https://www.linkedin.com/in/daniil-belazovschi/"
+              class="button"
+              target="_blank"
+              >View my professional CV</a
+            >
           </div>
         </div>
       </div>
-      <h2>My Work</h2>
+      <h2 id="work">My Work</h2>
       <div class="my-work">
         <article class="my-work__card">
           <h3>Simple JS App</h3>
@@ -448,7 +437,7 @@
       </div>
     </main>
     <footer class="page-footer">
-      <p>Find me on</p>
+      <p>Contact me at <a aria-label="This is my e-mail address" href="mailto:daniil.belazovschi@web.de">daniil.belazovschi@gmail.com</a> or find me on</p>
       <div class="social-media">
         <a
           href="https://github.com/daniswhoiam"
@@ -471,105 +460,27 @@
             src="img/linkedin.svg"
             alt="LinkedIn"
         /></a>
+        <a
+          href="https://stackoverflow.com/users/13342956/daniswhoiam"
+          aria-label="This is the link to my StackOverflow profile"
+          ><img
+            class="social-media__icon"
+            src="img/Stack_Overflow_icon.svg"
+            alt="StackOverflow"
+        /></a>
+        <a
+          href="https://medium.com/@daniil.belazovschi"
+          aria-label="This is the link to my Medium profile"
+          ><img class="social-media__icon" src="img/medium.svg" alt="Medium"
+        /></a>
+        <a
+          href="https://dev.to/daniswhoiam"
+          aria-label="This is the link to my dev.to profile"
+          ><img class="social-media__icon" src="img/dev-badge.svg" alt="Dev.to"
+        /></a>
       </div>
     </footer>
-    <script src="js/tota11y.min.js"></script>
+    <!-- <script src="js/tota11y.min.js"></script> -->
     <script src="js/functions.js"></script>
-    <script>
-      let cvImageWrapperImages = document.querySelectorAll(
-        ".cv-pictures__images img"
-      );
-      let cvImageWrapperImagesFirstImage = document.querySelector(
-        ".cv-pictures__images .firstImage"
-      );
-
-      let previousBtn = document.querySelector(".previous-btn");
-      let nextBtn = document.querySelector(".next-btn");
-
-      let cvImagesWrapperPagination = document.querySelector(
-        ".cv-pictures__pagination"
-      );
-
-      let currentImageCount = 1;
-
-      let sliderController;
-      let createPaginationSpans;
-
-      previousBtn.addEventListener("click", previousImage);
-      nextBtn.addEventListener("click", nextImage);
-
-      function previousImage() {
-        if (currentImageCount === 1) {
-          return false;
-        } else {
-          currentImageCount--;
-          sliderController();
-        }
-      }
-
-      function nextImage() {
-        if (currentImageCount === cvImageWrapperImages.length) {
-          return false;
-        } else {
-          currentImageCount++;
-          sliderController();
-        }
-      }
-
-      (function createPaginationSpans() {
-        for (let i = 0; i < cvImageWrapperImages.length; i++) {
-          let paginationSpan = document.createElement("span");
-          cvImagesWrapperPagination.appendChild(paginationSpan);
-        }
-      })();
-
-      (sliderController = function () {
-        let paginationCircls = document.querySelectorAll(
-          ".cv-pictures__pagination span"
-        );
-
-        removeAllActive(paginationCircls);
-
-        activeButton();
-
-        let currentImagesMinusOne = currentImageCount - 1;
-
-        paginationCircls[currentImagesMinusOne].classList.add("active");
-
-        let imageWidth = document
-          .querySelector(".cv-pictures__images")
-          .getBoundingClientRect().width;
-
-        let marginValue = -1 * (imageWidth * currentImagesMinusOne);
-
-        cvImageWrapperImagesFirstImage.style.marginLeft = `${marginValue}px`;
-      })();
-
-      function removeAllActive(targetElement) {
-        for (let i = 0; i < targetElement.length; i++) {
-          targetElement[i].classList.remove("active");
-        }
-      }
-
-      function activeButton() {
-        currentImageCount === 1
-          ? previousBtn.classList.add("disabled")
-          : previousBtn.classList.remove("disabled");
-
-        currentImageCount === cvImageWrapperImages.length
-          ? nextBtn.classList.add("disabled")
-          : nextBtn.classList.remove("disabled");
-      }
-
-      setInterval(() => {
-        if (currentImageCount != cvImageWrapperImages.length) {
-          currentImageCount++;
-          sliderController();
-        } else {
-          currentImageCount = 1;
-          sliderController();
-        }
-      }, 3000);
-    </script>
   </body>
 </html>
